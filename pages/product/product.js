@@ -15,12 +15,6 @@ Page({
       url: '../logs/logs'
     })
   },
-
-  toMy: function () {
-    wx.navigateTo({
-      url: '../product/product'
-    })
-  },
   onLoad: function () {
     console.log("aaaaa")
     if (app.globalData.userInfo) {
@@ -63,10 +57,7 @@ Page({
         userInfo: e.detail.userInfo,
         hasUserInfo: true,
         motto: "查看我的"
-      }),
-        wx.navigateTo({
-          url: '../product/product'
-        })
+      })
     }
   }
 })
