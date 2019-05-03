@@ -5,12 +5,27 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+  
     // 登录
     wx.login({
       success: res => {
         console.log("wx.login.res = " + res.code)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        if(res.code){
+          wx.request({
+            url: 'http://127.0.0.1:8071/wx/getUserInfo',
+            method: "POST",
+            data: {
+              "code": res.code
+            },
+            success: function(response){
+              if(response.data.status == 1){
+                // 缓存 uuid 以后每个接口都从缓存中取
+                wx.setStorageSync("uuid", response.data.data.uuid)
+              }
+            }
+          })
+        }
       }
     })
     // 获取用户信息
@@ -35,6 +50,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    apiRequestUrl:"http://127.0.0.1:8071"
   }
 })
