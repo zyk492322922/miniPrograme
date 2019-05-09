@@ -1,0 +1,11 @@
+<!--pages/detail/detail.wxml-->
+<view class='container page-detail'>
+  <view class='detail-header'>
+    <view class='detail-title'>{{detail.title}}</view>
+    <view class='detail-time'>{{detail.createTime}}</view>
+  </view>
+  <view class='detail-main'>{{detail.desc}}</view>
+  <view class="detail-img-list" wx:for="{{detail.imgUrls}}" wx:for-item="item">
+    <image class='detail-img-item' src="{{item}}" data-url="{{item}}" bindtap="previewImg"></image>
+  </view>
+</view>

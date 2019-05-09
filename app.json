@@ -2,13 +2,16 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/product/product"
+    "pages/product/product",
+    "pages/detail/detail",
+    "pages/add/add"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
   },
   "sitemapLocation": "sitemap.json"
 }

@@ -1,16 +1,27 @@
 <!--index.wxml-->
 <view class="container">
-  <open-data type="userAvatarUrl"></open-data> 
-  <open-data type="userNickName"></open-data>
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权登陆 </button>
-     <block wx:else>
-      <!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image> -->
-      <text bindtap="toMy" class="userinfo-nickname">查看我的</text>
-    </block> 
+  <view class='header'>
+    <view class="userinfo">
+      <open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
+      <open-data type="userNickName"></open-data>
+    </view>
+    <navigator url='/pages/add/add'>
+      <button type="primary" size="mini">
+        新增
+      </button>
+    </navigator>
   </view>
-  <view class="usermotto">
-    <!-- <text class="user-motto">{{motto}}</text> -->
+  <view class='order-list'>
+    <navigator url='{{"/pages/detail/detail?id=" + item.id }}' class='order-item' wx:for="{{tableList}}" wx:key="id">
+      <view class='order-left'>
+        <view class='order-title'>{{item.title}}</view>
+        <view class='order-time'>{{item.createTime}}</view>
+      </view>
+      <view class='order-right'>
+        <view class='order-status'>{{item.status}}</view>
+        <view class='order-arrow'></view>
+      </view>
+    </navigator>
   </view>
+  <view class='loading'>{{loadingText}}</view>
 </view>
-

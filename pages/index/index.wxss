@@ -1,31 +1,83 @@
 /**index.wxss**/
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
 .userinfo {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex: 1;
 }
 
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
   border-radius: 50%;
 }
 
 .userinfo-nickname {
   color: #aaa;
+  font-size: 14rpx;
 }
 
 .usermotto {
   margin-top: 200px;
 }
 
-.container {
-  background-color: #4B4B4B;
-   /* background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1556537966115&di=87c7673b30b5d19ac2523140942c69a3&imgtype=0&src=http%3A%2F%2Fimg.1ppt.com%2Fuploads%2Fallimg%2F1605%2F4_160506152624_1.jpg"); */
+.order-list {
+  padding: 0 20rpx;
 }
 
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+}
 
-button {
-  background-color: green;
+.order-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.order-time {
+  font-size: 14px;
+  color: #666;
+}
+
+.order-right {
+  display: flex;
+  align-items: center;
+}
+
+.order-status {
+  font-size: 14px;
+}
+
+.order-arrow {
+  width: 15px;
+  height: 15px;
+  border-top: 1px solid #999;
+  border-right: 1px solid #999;
+  transform: rotate(45deg);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.loading {
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+
+  margin-bottom: 20rpx;
 }

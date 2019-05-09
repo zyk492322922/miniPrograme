@@ -4,69 +4,76 @@ const app = getApp()
 
 Page({
   data: {
-    motto: '',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    loadingText: '上拉加载更多',
+    tableList: [{
+      id: 1,
+      title: '工单标题',
+      createTime: '2019-10-01',
+      status: '已接收'
+    }, {
+      id: 2,
+      title: '工单标题',
+      createTime: '2019-10-01',
+      status: '已接收'
+    }, {
+      id: 3,
+      title: '工单标题',
+      createTime: '2019-10-01',
+      status: '已接收'
+    }, {
+      id: 4,
+      title: '工单标题',
+      createTime: '2019-10-01',
+      status: '已接收'
+    }, {
+      id: 5,
+      title: '工单标题',
+      createTime: '2019-10-01',
+      status: '已接收'
+    }, {
+      id: 6,
+      title: '工单标题',
+      createTime: '2019-10-01',
+      status: '已接收'
+    }, {
+      id: 7,
+      title: '工单标题',
+      createTime: '2019-10-01',
+      status: '已接收'
+    }],
+    pageNum: 0,
+    pageSize: 10,
+    noMore: false
   },
   //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  onLoad: function() {
+    this.getTableList();
   },
 
-  toMy: function () {
-    wx.navigateTo({
-      url: '../product/product'
+  // 无限加载
+  onReachBottom() {
+    this.getTableList();
+  },
+
+  // 下拉刷新
+  onPullDownRefresh() {
+    this.pageNum = 0;
+    this.getTableList();
+    wx.stopPullDownRefresh();
+  },
+
+  getTableList() {
+    if (this.data.noMore) {
+      return;
+    }
+
+    const params = {
+      pageSize: this.data.pageSize,
+      pageNum: this.data.pageNum
+    }
+
+    this.setData({
+      loadingText: '加载中...'
     })
-  },
-  onLoad: function () {
-    console.log("aaaaa")
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true,
-        motto: "查看我的"
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback1 = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true,
-          motto: "查看我的"
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true,
-            motto: "查看我的"
-          })
-        }
-      })
-    }
-  },
-  // 获取用户信息方法
-  getUserInfo: function(e) {
-    console.log("cccc " + e)
-    // 判断是否获取授权，否则不设置用户信息和跳转链接
-    if(e.detail.userInfo){
-      app.globalData.userInfo = e.detail.userInfo
-      this.setData({
-        userInfo: e.detail.userInfo,
-        hasUserInfo: true,
-        motto: "查看我的"
-      }),
-        wx.navigateTo({
-          url: '../product/product'
-        })
-    }
   }
 })
