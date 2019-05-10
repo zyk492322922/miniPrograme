@@ -13,6 +13,12 @@
           <input value='{{form.name}}' data-name='name' bindinput='inputAuto' placeholder='请输入' />
         </view>
       </view>
+       <view class="form-item">
+        <view class="form-item-label">邮寄单号</view>
+        <view class='form-item-content'>
+          <input value='{{form.postId}}' data-name='name' bindinput='inputAuto' placeholder='请输入' />
+        </view>
+      </view>
       <view class="form-item">
         <view class="form-item-label">描述</view>
         <view class='form-item-content'>

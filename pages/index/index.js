@@ -7,37 +7,44 @@ Page({
     loadingText: '上拉加载更多',
     tableList: [{
       id: 1,
-      title: '工单标题',
+      title: '病例报告1',
+      name: '张三',
       createTime: '2019-10-01',
       status: '已接收'
     }, {
       id: 2,
-      title: '工单标题',
-      createTime: '2019-10-01',
-      status: '已接收'
+      title: '病例报告2',
+        name: '李四',
+      createTime: '2018-05-09',
+      status: '正在处理'
     }, {
       id: 3,
-      title: '工单标题',
-      createTime: '2019-10-01',
-      status: '已接收'
+      title: '病例报告3',
+        name: '李磊',
+      createTime: '2017-10-01',
+      status: '已出报告'
     }, {
       id: 4,
-      title: '工单标题',
+        title: '病例报告4',
+        name: '张三',
       createTime: '2019-10-01',
       status: '已接收'
     }, {
       id: 5,
-      title: '工单标题',
+        title: '病例报告5',
+        name: '张三',
       createTime: '2019-10-01',
       status: '已接收'
     }, {
       id: 6,
-      title: '工单标题',
+        title: '病例报告6',
+        name: '张三',
       createTime: '2019-10-01',
       status: '已接收'
     }, {
       id: 7,
-      title: '工单标题',
+      title: '病例报告7',
+        name: '张三',
       createTime: '2019-10-01',
       status: '已接收'
     }],

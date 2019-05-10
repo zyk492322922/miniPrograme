@@ -15,10 +15,13 @@
     <navigator url='{{"/pages/detail/detail?id=" + item.id }}' class='order-item' wx:for="{{tableList}}" wx:key="id">
       <view class='order-left'>
         <view class='order-title'>{{item.title}}</view>
-        <view class='order-time'>{{item.createTime}}</view>
+        <view class='order-name'>姓名：<view class='display-inline'> {{item.name}}</view></view>
+        <view class='order-time'>送检日期： {{item.createTime}}</view>
+        
+        <view class='order-name'>状态：<view class='display-inline'> {{item.status}}</view></view>
       </view>
       <view class='order-right'>
-        <view class='order-status'>{{item.status}}</view>
+        <view class='order-status'>查看详情</view>
         <view class='order-arrow'></view>
       </view>
     </navigator>

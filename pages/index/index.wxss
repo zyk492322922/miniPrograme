@@ -47,12 +47,29 @@
 
 .order-title {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: normal;
+  color: orange
+}
+.display-inline {
+  display: inline-block;
+  margin-left: 75rpx;
 }
 
 .order-time {
   font-size: 14px;
   color: #666;
+  border-bottom: 1px solid #eee;
+  margin-top: 15rpx;
+  padding-bottom: 10rpx;
+  
+}
+
+.order-name {
+  font-size: 14px;
+  color: #666;
+  border-bottom: 1px solid #eee;
+  margin-top: 15rpx;
+  padding-bottom: 10rpx;
 }
 
 .order-right {
