@@ -17,4 +17,17 @@
 
 .btn-area {
   margin-top: 60rpx;
+
+} 
+
+.form-item-label {
+  min-width: 70px;
+}
+
+.btn-area {
+  margin-top: 60rpx;
+}
+
+.file-upload {
+   margin-top:50rpx;
 }
